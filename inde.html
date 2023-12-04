@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> fetch api</title>
+</head>
+<body>
+    <h1>this is fetch api </h1>
+    <script>
+
+   ///post new user
+fetch("https://jsonplaceholder.typicode.com/users").then(response=>{
+  return response.json();
+}).then(data=>{
+  console.log(data)
+})
+  //post
+ const data={
+  name:"ruwa",
+  phone:"06352634"
+ }
+ fetch("https://jsonplaceholder.typicode.com/users",{
+  method:"POST",
+  headers:{"content-Type":"application/json"
+},
+body:JSON.stringify(data)
+ }).then(response =>response.json())
+ .then(data=>console.log(data));
+    </script>
+</body>
+</html>
